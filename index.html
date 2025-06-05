@@ -6,7 +6,7 @@
     <title>personal profile</title>
     <link rel="stylesheet" href="style1.css">
 </head>
-<body>
+<body id="home">
     <!-- Navbar Container -->
     <nav class="navbar">
         <div class="navbar-container">
@@ -16,10 +16,11 @@
             <!-- Navigation Links - Hidden on small screens, revealed by options button -->
             <div id="nav-links" class="nav-links">
                 <a href="#about-me">About Me</a>
-                <a href="#experience">Experience</a>
+                <a href="#Education">Education</a>
+                <a href="#Courses&certifications">Courses&certifications</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="#Experience">Experience</a>
             </div>
 
             <!-- Search and Options Section -->
@@ -45,61 +46,46 @@
     <div>
         <h1>Welcome to my personal profile page!</h1>
         <h2>Here you can find information about my background, interests, skills and projects.</h2>
-        <ul class="resume-section">
+        <ul id="about-me" class="resume-section">
+            <h2>About Me</h2>
             <li><strong>Name:</strong> Deepak Kumar Poddar</li>
             <li><strong>Title:</strong> Aspiring Software Developer & CA Student</li>
-            <li><strong>Professional Courses:</strong> Pursuing Chartered Accountancy and trained in Python</li>
-            <li><strong>Skills:</strong> HTML, CSS, JavaScript, Python, GD Script, Godot, Django, Tailwind, Bootstrap</li>
-            <li><strong>Projects:</strong> Developed personal portfolio websites, Develop many small scale 2d games for Android & Windows</li>
-            <li><strong>Certifications:</strong> Completed courses in web development, Python</li>
-            <li><strong>Achievements:</strong> Completed various online courses in web development and software engineering</li>
-            <li><strong>Education:</strong> Pursuing Bachelor's Degree in Commerce(Hons in Accountancy)</li>
-            <li><strong>Experience:</strong> Worked at Madhu Stores</li>
             <li><strong>Location:</strong> India</li> 
             <li><strong>Interests:</strong> Coding, Reading, Football, Chess</li>
         </ul>
+        <ul id="Education" class="resume-section">
+            <h2>Education</h2>
+            <li>
+                <ul>
+                    <li><strong>Bachelor of Commerce (Honours) in Accountancy</strong></li>
+                    <li><strong>Class 12 Commerce (WBBSE)</strong></li>
+                    <li><strong>Class 10 Secondary Education (WBBSE)</strong></li>
+                </ul>
+            </li>
+        </ul>
+        <ul id="Courses&certifications" class="resume-section">
+            <h2>Courses&certifications</h2>
+            <li><strong>Professional Courses:</strong> Pursuing Chartered Accountancy and trained in Python</li>
+            <li><strong>Certifications:</strong><ol><li>Completed courses in Tally Prime</li>
+                                                    <li>Completed courses in web development Python</li>
+                                                    <li>Completed courses in MS office (Advance level)</li>
+                                                </ol></li>
+        </ul>
+        <ul id="skills" class="resume-section">
+            <h2>Skills</h2>
+            <li><strong>Skills:</strong><p class="sk"> HTML, CSS, JavaScript, Python, GD Script, Godot, Django, Tailwind, Bootstrap</p></li>
+        </ul>
+        <ul id="projects" class="resume-section">
+            <h2>Projects</h2>
+            <li><strong><a href="web.html"> Developed personal portfolio websites</strong></a></li>
+            <li><strong><a href="game.html">Develop many small scale 2d games for Android & Windows</strong></a></li>
+        </ul>
+        <ul id="Experience" class="resume-section">
+            <h2>Work Experience</h2>
+            <li><strong>Experience:</strong> Worked at Madhu Stores</li>
+            <li><strong>Internship:</strong> sally software</li>
+        </ul>
         <p class="r">Feel free to reach out if you have any questions or want to connect!</p>
     </div>
-    <script>
-        // JavaScript to toggle navigation links on small screens
-        document.getElementById('options-button').addEventListener('click', function() {
-            const navLinks = document.getElementById('nav-links');
-            // Toggle 'display: flex' and 'flex-direction: column' for mobile menu
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.width = '100%';
-                navLinks.style.marginTop = '1rem';
-            }
-        });
-
-        // Add a listener for window resize to hide the mobile menu on larger screens
-        window.addEventListener('resize', function() {
-            const navLinks = document.getElementById('nav-links');
-            if (window.innerWidth >= 768) { // Corresponds to md breakpoint
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'row';
-                navLinks.style.width = 'auto';
-                navLinks.style.marginTop = '0';
-            } else {
-                // Ensure it remains hidden if it was closed by the user on mobile
-                // This prevents it from reappearing if resized from large to small
-                if (!navLinks.classList.contains('hidden-on-mobile-initial') && navLinks.style.display !== 'none') {
-                    navLinks.style.display = 'none';
-                }
-            }
-        });
-
-        // Initialize the hidden state for smaller screens on load
-        window.addEventListener('load', function() {
-            const navLinks = document.getElementById('nav-links');
-            if (window.innerWidth < 768) {
-                navLinks.style.display = 'none';
-                navLinks.classList.add('hidden-on-mobile-initial'); // Add a class to indicate initial hidden state
-            }
-        });
-    </script>
 </body>
 </html>
