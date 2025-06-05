@@ -235,6 +235,7 @@ h2 {
     color: #200ae8;
 }
 p {
+    margin: 10px;
     line-height: 1.6;
 }
 ul {
