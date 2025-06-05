@@ -60,5 +60,46 @@
         </ul>
         <p class="r">Feel free to reach out if you have any questions or want to connect!</p>
     </div>
+    <script>
+        // JavaScript to toggle navigation links on small screens
+        document.getElementById('options-button').addEventListener('click', function() {
+            const navLinks = document.getElementById('nav-links');
+            // Toggle 'display: flex' and 'flex-direction: column' for mobile menu
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.width = '100%';
+                navLinks.style.marginTop = '1rem';
+            }
+        });
+
+        // Add a listener for window resize to hide the mobile menu on larger screens
+        window.addEventListener('resize', function() {
+            const navLinks = document.getElementById('nav-links');
+            if (window.innerWidth >= 768) { // Corresponds to md breakpoint
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'row';
+                navLinks.style.width = 'auto';
+                navLinks.style.marginTop = '0';
+            } else {
+                // Ensure it remains hidden if it was closed by the user on mobile
+                // This prevents it from reappearing if resized from large to small
+                if (!navLinks.classList.contains('hidden-on-mobile-initial') && navLinks.style.display !== 'none') {
+                    navLinks.style.display = 'none';
+                }
+            }
+        });
+
+        // Initialize the hidden state for smaller screens on load
+        window.addEventListener('load', function() {
+            const navLinks = document.getElementById('nav-links');
+            if (window.innerWidth < 768) {
+                navLinks.style.display = 'none';
+                navLinks.classList.add('hidden-on-mobile-initial'); // Add a class to indicate initial hidden state
+            }
+        });
+    </script>
 </body>
 </html>
