@@ -97,7 +97,15 @@ body {
     .nav-links a {
         margin-bottom: 0; /* md:space-y-0 */
     }
+    .dropdown-button{
+        display: none; /* Hide dropdown on larger screens */
+    }
+    .dropdown {
+        display: none; /* Hide dropdown on larger screens */
+    }
+
 }
+
 
 /* Search and Options Section */
 .search-options-section {
@@ -258,4 +266,49 @@ p.r{
 p.sk{
     color: #eb4604;
     font-weight: bold;
+}
+/* Basic styling for the dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block; /* Allows the button to be inline while containing the dropdown */
+}
+
+/* Style for the button (optional) */
+.dropdown-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Styling for the dropdown content (the element with id="nav-links") */
+#nav-link{
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    padding: 12px 0;
+    left: 0; /* Align with the button */
+}
+
+/* Style for the links inside the dropdown */
+#nav-links a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Each link on its own line */
+}
+
+#nav-links a:hover {
+    background-color: #ddd;
+}
+
+/* This is the key CSS rule: when 'show' class is present, display the content */
+#nav-links.show {
+    display: block;
 }

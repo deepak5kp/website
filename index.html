@@ -22,24 +22,18 @@
                 <a href="#projects">Projects</a>
                 <a href="#Experience">Experience</a>
             </div>
-
-            <!-- Search and Options Section -->
-            <div class="search-options-section">
-                <!-- Search Input - Can be useful for searching skills/keywords on your resume -->
-                <div class="search-input-wrapper">
-                    <input type="text" placeholder="Search resume..." class="search-input">
-                    <!-- Search Icon (inline SVG for simplicity) -->
-                    <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                </div>
-
-                <!-- Options Button (for mobile responsiveness) -->
-                <button id="options-button" class="options-button">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+            <div id="toggle" class="dropdown">
+                <button class="dropdown-button" onclick="document.getElementById('nav-links').classList.toggle('show')">
+                    Toggle Dropdown
                 </button>
+                <div id="nav-link" class="nav-links">
+                    <a href="#about-me">About Me</a>
+                    <a href="#Education">Education</a>
+                    <a href="#Courses&certifications">Courses&certifications</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#Experience">Experience</a>
+                </div>              
             </div>
         </div>
     </nav>
